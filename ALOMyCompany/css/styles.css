@@ -22,7 +22,7 @@ body {
     width: auto;
 }
 
-.button{
+.button {
     border-style: ridge;
 }
 
@@ -75,6 +75,7 @@ body {
     border: 5px solid #ABB7B7;
     padding-left: 40px;
 }
+
 .product-desc {
     padding-top: 10px;
     width: 300px;
@@ -92,17 +93,20 @@ body {
 }
 
 .header img {
-  float: left;
-  width: 100px;
-  height: 100px;
+    float: left;
+    width: 100px;
+    height: 100px;
 }
+
 .left {
     float: left;
     text-align: right;
 }
+
 .right {
     margin-left: 10px;
 }
+
 h4,
 address,
 p {
@@ -116,8 +120,8 @@ footer {
     position: relative;
 }
 
-.form-inline .form-control{
-    display:inline-block;
-    width:auto;
-    vertical-align:middle
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle
 }
