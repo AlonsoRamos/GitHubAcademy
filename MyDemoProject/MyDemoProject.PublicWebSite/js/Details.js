@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     loadProduct();
 
 });
@@ -10,7 +10,7 @@ function loadProduct() {
 
 function FindMyProduct(id) {
     var ProductDetails = "";
-    $.each(MyCatalogData, function(element, object) {
+    $.each(JSONDetails, function (element, object) {
         if (object.id == id)
             ProductDetails = object;
     });
@@ -24,7 +24,7 @@ function buildMyProduct(myProduct) {
     html += "<div class='Catalog ProducItem'>";
     html += "<div>" + myProduct.title + "</a></div>";
     html += "<div><img class='Catalog' src='" + myProduct.imgUrl + "' /></div>";
-    html += "<div>" + myProduct.description + "</div></div>";
+    html += "<div>" + myProduct.description + myProduct.model + myProduct.price + "</div></div>";
 
     $("#MyDynamicProductDetail").append(html);
 }

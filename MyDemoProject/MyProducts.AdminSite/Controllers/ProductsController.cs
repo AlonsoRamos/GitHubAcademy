@@ -50,6 +50,8 @@ namespace MyProducts.AdminSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Description,Model,Price,Keywords,CategoryId,Active")] Product product)
         {
+            product.CreateDateTime = DateTime.Now;
+            product.UpdateDateTime = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Products.Add(product);
@@ -82,8 +84,10 @@ namespace MyProducts.AdminSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Description,Model,Price,Keywords,CategoryId,Active")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,Description,Model,Price,Keywords,CategoryId,Active,CreateDateTime")] Product product)
         {
+
+            product.UpdateDateTime = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Entry(product).State = EntityState.Modified;
