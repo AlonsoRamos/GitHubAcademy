@@ -21,10 +21,18 @@ function FindMyProduct(id) {
 //Dynamic build your collection
 function buildMyProduct(myProduct) {
     var html = "";
-    html += "<div class='Catalog ProducItem'>";
-    html += "<div>" + myProduct.title + "</a></div>";
-    html += "<div><img class='Catalog' src='" + myProduct.imgUrl + "' /></div>";
-    html += "<div>" + myProduct.description + myProduct.model + myProduct.price + "</div></div>";
+    html += "<div class='row'>";
+    html += "<div><h3 style='padding-left:20px;'>" + myProduct.title + "</h3></div>";
+    html += "<div class='col-md-3 thumbnail'style='width:250px; height:180px;'><img style='width:250px; height:170px;' src='" + myProduct.MainImage + "' /></div>";
+    html += "<div class='col-md-3 container'><div>" + myProduct.price +"<div>"+ myProduct.model +"</div>"+ "</div>"+"<div>"+myProduct.description + "</div></div>";
+    html += "</div>";
+    html += "<div class='row' id='Similares'>";
+    $.each(myProduct.ProductImage, function (element, obj) {
+        html += "<img class='col-md-3 thumbnail' style='width:80px; height:80px;' src='" + obj.imgUrl + "'/>";
+    });
+    html += "</div>";
+
+
 
     $("#MyDynamicProductDetail").append(html);
 }
